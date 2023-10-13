@@ -6,16 +6,13 @@
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "commonjs",
+  "type": "module",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsc",
-    "build:w": "tsc -w",
-    "test": "jest",
-    "test:w": "jest --watch",
-    "lint": "eslint . --ext .ts"
+    "build:w": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -29,14 +26,7 @@
   "homepage": "https://github.com/rioredwards/contentful-rich-text-to-markdown-converter#readme",
   "devDependencies": {
     "@contentful/rich-text-types": "^16.3.0",
-    "@types/jest": "^29.5.5",
     "@types/node": "^20.8.4",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
-    "eslint": "^8.51.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
