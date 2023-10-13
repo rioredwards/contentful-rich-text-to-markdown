@@ -11,8 +11,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "build:w": "tsc -w"
+    "build:dev": "tsc -w",
+    "build:node": "rm -rf ./dist/* && tsc",
+    "build:python": "rm -rf ./dist/* && node esbuild.config.mjs"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@contentful/rich-text-types": "^16.3.0",
     "@types/node": "^20.8.4",
+    "esbuild": "0.19.4",
     "typescript": "^5.2.2"
   },
   "dependencies": {
