@@ -1,6 +1,6 @@
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { Document } from "@contentful/rich-text-types";
-import { NodeHtmlMarkdown } from "node-html-markdown";
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import type { Document } from '@contentful/rich-text-types';
+import { NodeHtmlMarkdown } from 'node-html-markdown';
 
 // Convert the rich text to HTML
 export default function convertRichTextToMarkdown(document: Document): string | undefined {
