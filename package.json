@@ -1,5 +1,5 @@
 {
-  "name": "contentful-rich-text-to-markdown",
+  "name": "contentful-rich-text-to-markdown-converter",
   "version": "1.0.0",
   "author": "Rio Edwards <rioredwards@gmail.com>",
   "description": "This module converts Contentful Rich Text objects to Markdown.",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rioredwards/contentful-rich-text-to-markdown.git"
+    "url": "git+https://github.com/rioredwards/contentful-rich-text-to-markdown-converter.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rioredwards/contentful-rich-text-to-markdown/issues"
+    "url": "https://github.com/rioredwards/contentful-rich-text-to-markdown-converter/issues"
   },
-  "homepage": "https://github.com/rioredwards/contentful-rich-text-to-markdown#readme",
+  "homepage": "https://github.com/rioredwards/contentful-rich-text-to-markdown-converter#readme",
   "devDependencies": {
     "@contentful/rich-text-types": "^16.3.0",
     "@types/jest": "^29.5.5",
