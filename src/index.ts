@@ -3,7 +3,7 @@ import type { Document } from "@contentful/rich-text-types";
 import { NodeHtmlMarkdown } from "node-html-markdown";
 
 // Convert the rich text documents from Contentful to Markdown
-export default function convertRichTextToMarkdown(document: Document): string | undefined {
+export function convertRichTextToMarkdown(document: Document): string | undefined {
   const html = documentToHtmlString(document);
   const markdown = NodeHtmlMarkdown.translate(html);
   return markdown;

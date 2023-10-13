@@ -4,8 +4,9 @@ esbuild
   .build({
     entryPoints: ["./src/index.ts"], // Your entry file
     bundle: true,
-    outfile: "./dist/bundle.js", // Output bundled file
+    outfile: "./dist/bundle.mjs", // Output bundled file
     platform: "node", // Target platform
-    minify: true, // Minify the code
+    minify: false, // Minify the code
+    format: "esm",
   })
   .catch(() => process.exit(1));
