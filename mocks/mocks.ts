@@ -68,3 +68,35 @@ export const richTextWithList: Document = {
   ],
   nodeType: BLOCKS.DOCUMENT,
 };
+
+export const richTextWithCodeBlock: Document = {
+  nodeType: BLOCKS.DOCUMENT,
+  data: {},
+  content: [
+    {
+      nodeType: BLOCKS.PARAGRAPH,
+      data: {},
+      content: [
+        {
+          nodeType: "text",
+          value: "1. Download the code and cd into the project directory",
+          marks: [],
+          data: {},
+        },
+      ],
+    },
+    {
+      nodeType: BLOCKS.EMBEDDED_ENTRY,
+      data: {
+        target: {
+          sys: {
+            id: "6IoowmQ4rIHAP4rHezXIvX",
+            type: "Link",
+            linkType: "Entry",
+          },
+        },
+      },
+      content: [],
+    },
+  ],
+};
