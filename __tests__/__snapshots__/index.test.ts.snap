@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertRichTextToMarkdown should return markdown when passed a:  rich-text obj with unordered list 1`] = `
+"* Designed using OOP principles
+* Intuitive Command Line Interface"
+`;
