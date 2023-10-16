@@ -1,20 +1,22 @@
 {
   "name": "contentful-rich-text-to-markdown-converter",
-  "version": "1.0.1",
+  "version": "1.2.1",
   "author": "Rio Edwards <rioredwards@gmail.com>",
   "description": "This module converts Contentful Rich Text objects to Markdown.",
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "README.md"
   ],
   "scripts": {
     "test": "jest",
     "build:dev": "tsc -w",
     "build:node": "rm -rf ./dist/* && tsc",
-    "build:python": "rm -rf ./dist/* && node esbuild.config.mjs"
+    "build:python": "rm -rf ./dist/* && node esbuild.config.js"
   },
   "repository": {
     "type": "git",

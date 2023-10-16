@@ -1,8 +1,8 @@
 // These tests use the live Contentful API to test the integration with the Contentful Rich Text API.
-import { createClient } from "contentful";
-import "dotenv/config";
-import fs from "fs";
-import { convertRichTextToMarkdown } from "../src/index";
+const { createClient } = require("contentful");
+require("dotenv/config");
+const fs = require("fs");
+const { convertRichTextToMarkdown } = require("../src/index");
 
 const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,

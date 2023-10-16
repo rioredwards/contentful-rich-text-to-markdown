@@ -1,6 +1,8 @@
-import { convertRichTextToMarkdown } from "../src/index";
-import { describe, expect, test } from "@jest/globals";
-import { basicRichText, richTextWithList } from "../mocks/mocks";
+export {};
+
+const { convertRichTextToMarkdown } = require("../src/index");
+const { describe, expect } = require("@jest/globals");
+const { basicRichText, richTextWithList } = require("../mocks/mocks");
 
 describe("convertRichTextToMarkdown should return markdown when passed a: ", () => {
   it("basic rich-text obj", () => {
