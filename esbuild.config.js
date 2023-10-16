@@ -6,7 +6,7 @@ esbuild
     bundle: true,
     outfile: "./dist/index.js", // Output bundled file
     platform: "node", // Target platform
-    minify: false, // Minify the code
+    minify: true, // Minify the code
     format: "cjs",
   })
   .catch(() => process.exit(1));
