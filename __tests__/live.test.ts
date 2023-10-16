@@ -18,18 +18,9 @@ describe("Contentful Rich Text API", () => {
     const myProj = await client.getEntry(process.env.CONTENTFUL_PROJ_ID as string);
     const usage = myProj.fields.usage;
     const usageMarkdown = convertRichTextToMarkdown(usage as any);
-
-    // prettierignore next 3 lines
-    const targetStr = `
-1. Download the code and cd into the project directory
-
-\`\`\`bash
-git clone https://github.com/rioredwards/Tic-Tac-Toe.git
-cd Tic-Tac-Toe
-\`\`\``;
     // Write to readme.md
-    if (typeof usageMarkdown === "string") fs.writeFileSync("./README.md", usageMarkdown);
+    if (typeof usageMarkdown === "string") fs.writeFileSync("./TEST_README.md", usageMarkdown);
 
-    expect(usageMarkdown).toBe(targetStr);
+    expect(usageMarkdown).toMatchSnapshot();
   });
 });

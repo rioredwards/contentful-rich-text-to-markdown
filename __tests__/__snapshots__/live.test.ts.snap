@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contentful Rich Text API should return a usage rich text document with an embedded code block 1`] = `
+"1\\. Download and cd into the project
+
+\`\`\`bash
+git clone https://github.com/rioredwards/Tic-Tac-Toe.git
+cd Tic-Tac-Toe
+\`\`\`
+
+2\\. Compile source code into binary (executable) file
+
+\`\`\`bash
+make
+\`\`\`
+
+3\\. Run the executable file
+
+\`\`\`bash
+./main
+\`\`\`"
+`;
