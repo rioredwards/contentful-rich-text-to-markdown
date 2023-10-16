@@ -24,7 +24,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install --dev
-      - run: npx eslint .
       - run: npm test --passWithNoTests
         env:
           CI: true
+          WRITE_TO_FILE: false
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          CONTENTFUL_PROJ_ID: ${{ secrets.CONTENTFUL_PROJ_ID }}
