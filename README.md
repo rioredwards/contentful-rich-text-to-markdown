@@ -1,9 +1,18 @@
-# Contentful Rich Text To Markdown Converter
-
-This module converts Contentful Rich Text objects to Markdown.
-
-## Installation
+1\. Download and cd into the project
 
 ```bash
-npm install contentful_rich_text_to_markdown_converter
+git clone https://github.com/rioredwards/Tic-Tac-Toe.git
+cd Tic-Tac-Toe
+```
+
+2\. Compile source code into binary (executable) file
+
+```bash
+make
+```
+
+3\. Run the executable file
+
+```bash
+./main
 ```
