@@ -6,9 +6,11 @@
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "README.md"
   ],
   "scripts": {
     "test": "jest",
