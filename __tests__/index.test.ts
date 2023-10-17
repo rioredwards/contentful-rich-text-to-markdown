@@ -2,7 +2,7 @@ export {};
 
 const { convertRichTextToMarkdown } = require("../src/index");
 const { describe, expect } = require("@jest/globals");
-const { basicRichText, richTextWithList } = require("../mocks/mocks");
+const { basicRichText, richTextWithList, richTextWithCodeBlock } = require("../mocks/mocks");
 
 describe("convertRichTextToMarkdown should return markdown when passed a: ", () => {
   it("basic rich-text obj", () => {
@@ -12,6 +12,16 @@ describe("convertRichTextToMarkdown should return markdown when passed a: ", () 
   });
   it("rich-text obj with unordered list", () => {
     const markdown = convertRichTextToMarkdown(richTextWithList);
+
+    expect(markdown).toMatchSnapshot();
+  });
+  it("rich-text obj with unordered list", () => {
+    const markdown = convertRichTextToMarkdown(richTextWithList);
+
+    expect(markdown).toMatchSnapshot();
+  });
+  it("rich-text obj with code block", () => {
+    const markdown = convertRichTextToMarkdown(richTextWithCodeBlock);
 
     expect(markdown).toMatchSnapshot();
   });

@@ -15,11 +15,7 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "args": [
-        "-t",
-        "should return a usage rich text document with an embedded code block",
-        "--runInBand"
-      ],
+      "args": ["-t", "rich-text obj with code block", "--runInBand"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
