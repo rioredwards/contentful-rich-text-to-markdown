@@ -11,6 +11,15 @@
       "internalConsoleOptions": "neverOpen"
     },
     {
+      "name": "Jest: Project Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["-t", "Contentful Project", "--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
       "name": "Jest: Specific Test",
       "type": "node",
       "request": "launch",

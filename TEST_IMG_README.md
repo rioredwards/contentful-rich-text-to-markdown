@@ -1,1 +1,1 @@
-![Error Affirmations Jest Reporter Screenshot 1](https://images.ctfassets.net/l329ngjcm8m3/1ryCjATuECJw1xJGJlXHT3/bd6615876fa65a77a8423ff31aaf9de6/Jest_Example_Default.png)
+{"customEmbeddedImage":{"title":"Error Affirmations Jest Reporter Screenshot 1","url":"//images.ctfassets.net/l329ngjcm8m3/1ryCjATuECJw1xJGJlXHT3/bd6615876fa65a77a8423ff31aaf9de6/Jest_Example_Default.png"}}
