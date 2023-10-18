@@ -163,19 +163,43 @@ async function gatherProjContent() {
   projContent.custom = contentfulProj.fields.custom;
 }
 
-// it("should return a custom rich text document with an embedded image", async () => {
-//   const myProj = await client.getEntry(
-//     process.env.CONTENTFUL_PROJ_ID_ERROR_AFFIRMATIONS as string
-//   );
-//   const custom = myProj.fields.custom;
-//   const customMarkdown = convertRichTextToMarkdown(custom as any);
-//   // Write to readme.md
-//   if (typeof customMarkdown === "string" && WRITE_TO_FILE) {
-//     fs.writeFileSync("./TEST_IMG_README.md", customMarkdown);
-//   }
-
-//   const imageRegex = new RegExp(
-//   /!\[.*\]\(https:\/\/images\.ctfassets\.net\/.*\/.*\/.*\/.*\.png\)/
-// );
-
-// expect(imageRegex.test(customMarkdown)).toBe(true);
+const exampleCustomFromPython = {
+  data: {},
+  content: [
+    {
+      data: {
+        target: {
+          metadata: { tags: [] },
+          sys: {
+            space: { sys: { type: "Link", linkType: "Space", id: "l329ngjcm8m3" } },
+            id: "61Gv4YS4gh15J9LlabYYGw",
+            type: "Asset",
+            createdAt: "2023-10-18T18:32:09.123Z",
+            updatedAt: "2023-10-18T18:32:09.123Z",
+            environment: { sys: { id: "master", type: "Link", linkType: "Environment" } },
+            revision: 1,
+            locale: "en-US",
+          },
+          fields: {
+            title: "Test Logo",
+            description: "",
+            file: {
+              url: "//images.ctfassets.net/l329ngjcm8m3/61Gv4YS4gh15J9LlabYYGw/c1bb5e48c4fb498e1a83cbcf5ea92085/Test_Logo.png",
+              details: { size: 26909, image: { width: 1024, height: 1024 } },
+              fileName: "Test Logo.png",
+              contentType: "image/png",
+            },
+          },
+        },
+      },
+      content: [],
+      nodeType: "embedded-asset-block",
+    },
+    {
+      data: {},
+      content: [{ data: {}, marks: [], value: "", nodeType: "text" }],
+      nodeType: "paragraph",
+    },
+  ],
+  nodeType: "document",
+};

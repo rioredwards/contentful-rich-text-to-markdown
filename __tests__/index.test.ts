@@ -2,9 +2,14 @@ export {};
 
 const { convertRichTextToMarkdown } = require("../src/index");
 const { describe, expect } = require("@jest/globals");
-const { basicRichText, richTextWithList, richTextWithCodeBlock } = require("../mocks/mocks");
+const {
+  basicRichText,
+  richTextWithList,
+  richTextWithCodeBlock,
+  exampleCustomFromPython,
+} = require("../mocks/mocks");
 
-describe.skip("convertRichTextToMarkdown should return markdown when passed a: ", () => {
+describe("convertRichTextToMarkdown should return markdown when passed a: ", () => {
   it("basic rich-text obj", () => {
     const markdown = convertRichTextToMarkdown(basicRichText);
 
@@ -22,6 +27,11 @@ describe.skip("convertRichTextToMarkdown should return markdown when passed a: "
   });
   it("rich-text obj with code block", () => {
     const markdown = convertRichTextToMarkdown(richTextWithCodeBlock);
+
+    expect(markdown).toMatchSnapshot();
+  });
+  it("rich-text obj with code embedded asset", () => {
+    const markdown = convertRichTextToMarkdown(exampleCustomFromPython);
 
     expect(markdown).toMatchSnapshot();
   });

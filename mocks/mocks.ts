@@ -171,3 +171,44 @@ export const richTextWithCodeBlock: Document = {
     },
   ],
 };
+
+export const exampleCustomFromPython: Document = {
+  data: {},
+  content: [
+    {
+      data: {
+        target: {
+          metadata: { tags: [] },
+          sys: {
+            space: { sys: { type: "Link", linkType: "Space", id: "l329ngjcm8m3" } },
+            id: "61Gv4YS4gh15J9LlabYYGw",
+            type: "Asset",
+            createdAt: "2023-10-18T18:32:09.123Z",
+            updatedAt: "2023-10-18T18:32:09.123Z",
+            environment: { sys: { id: "master", type: "Link", linkType: "Environment" } },
+            revision: 1,
+            locale: "en-US",
+          },
+          fields: {
+            title: "Test Logo",
+            description: "",
+            file: {
+              url: "//images.ctfassets.net/l329ngjcm8m3/61Gv4YS4gh15J9LlabYYGw/c1bb5e48c4fb498e1a83cbcf5ea92085/Test_Logo.png",
+              details: { size: 26909, image: { width: 1024, height: 1024 } },
+              fileName: "Test Logo.png",
+              contentType: "image/png",
+            },
+          },
+        },
+      },
+      content: [],
+      nodeType: BLOCKS.EMBEDDED_ASSET,
+    },
+    {
+      data: {},
+      content: [{ data: {}, marks: [], value: "", nodeType: "text" }],
+      nodeType: BLOCKS.PARAGRAPH,
+    },
+  ],
+  nodeType: BLOCKS.DOCUMENT,
+};
