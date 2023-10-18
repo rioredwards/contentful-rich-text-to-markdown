@@ -72,19 +72,11 @@ describe("Contentful Project", () => {
 describe("convertRichTextToMarkdown", () => {
   it("should convert normal text", async () => {
     const sloganMarkdown = convertRichTextToMarkdown(projContent.slogan);
-    // Write to readme.md
-    if (typeof sloganMarkdown === "string" && WRITE_TO_FILE) {
-      fs.writeFileSync("./TEST_README.md", sloganMarkdown);
-    }
     const expectedSlogan = "This is a test slogan";
     expect(sloganMarkdown).toBe(expectedSlogan);
   });
   it("should convert styled text", async () => {
     const descriptionMarkdown = convertRichTextToMarkdown(projContent.description);
-    // Write to readme.md
-    if (typeof descriptionMarkdown === "string" && WRITE_TO_FILE) {
-      fs.writeFileSync("./TEST_README.md", descriptionMarkdown);
-    }
     // prettier ignore next 4 lines
     const expectedDescription = `**This is a paragraph in bold.**
 
@@ -95,7 +87,27 @@ _This is a paragraph in italics._
 \`This is some inline code.\``;
     expect(descriptionMarkdown).toBe(expectedDescription);
   });
+  it("should convert unordered lists", async () => {
+    const featuresMarkdown = convertRichTextToMarkdown(projContent.features);
+    // prettier ignore next 2 lines
+    const expectedFeatures = `* Item 1
+* Item 2`;
+    expect(featuresMarkdown).toBe(expectedFeatures);
+  });
 });
+
+// Write to all resulting markdown to the TEST_README.md file
+if (WRITE_TO_FILE) {
+  let fullMarkdown = "";
+
+  for (const markdownSection of Object.values(projContent)) {
+    if (markdownSection) {
+      fullMarkdown += `${markdownSection}`;
+    }
+  }
+
+  fs.writeFileSync("./TEST_README.md", fullMarkdown);
+}
 
 const example = {
   customEmbeddedImage: {
@@ -103,17 +115,3 @@ const example = {
     url: "//images.ctfassets.net/l329ngjcm8m3/1ryCjATuECJw1xJGJlXHT3/bd6615876fa65a77a8423ff31aaf9de6/Jest_Example_Default.png",
   },
 };
-
-// it("should return a custom rich text document with an embedded image", async () => {
-//   const customMarkdown = convertRichTextToMarkdown(projContent.custom);
-//   // Write to readme.md
-//   if (typeof customMarkdown === "string" && WRITE_TO_FILE) {
-//     fs.writeFileSync("./TEST_README.md", customMarkdown);
-//   }
-
-//   const imageRegex = new RegExp(
-//     /!\[.*\]\(https:\/\/images\.ctfassets\.net\/.*\/.*\/.*\/.*\.png\)/
-//   );
-
-//   expect(imageRegex.test(customMarkdown)).toBe(true);
-// });
