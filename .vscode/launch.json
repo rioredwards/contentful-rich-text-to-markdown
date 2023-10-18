@@ -20,6 +20,15 @@
       "internalConsoleOptions": "neverOpen"
     },
     {
+      "name": "Jest: convertRichTextToMarkdown Test",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["-t", "convertRichTextToMarkdown", "--runInBand"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
       "name": "Jest: Specific Test",
       "type": "node",
       "request": "launch",
