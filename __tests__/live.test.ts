@@ -94,6 +94,13 @@ _This is a paragraph in italics._
 * Item 2`;
     expect(featuresMarkdown).toBe(expectedFeatures);
   });
+  it("should convert ordered lists", async () => {
+    const configureMarkdown = convertRichTextToMarkdown(projContent.configure);
+    // prettier ignore next 2 lines
+    const expectedConfigure = `1. Item 1
+2. Item 2`;
+    expect(configureMarkdown).toBe(expectedConfigure);
+  });
 });
 
 // Write to all resulting markdown to the TEST_README.md file
