@@ -70,30 +70,30 @@ describe("Contentful Project", () => {
 });
 
 describe("convertRichTextToMarkdown", () => {
-  it("should return a usage rich text document with an embedded code block", async () => {
-    const myProj = await client.getEntry(process.env.CONTENTFUL_TEST_PROJ_ID as string);
-    const usage = myProj.fields.usage;
-    const usageMarkdown = convertRichTextToMarkdown(usage as any);
+  it("should convert normal text", async () => {
+    const sloganMarkdown = convertRichTextToMarkdown(projContent.slogan);
     // Write to readme.md
-    if (typeof usageMarkdown === "string" && WRITE_TO_FILE) {
-      fs.writeFileSync("./TEST_CODE_README.md", usageMarkdown);
+    if (typeof sloganMarkdown === "string" && WRITE_TO_FILE) {
+      fs.writeFileSync("./TEST_README.md", sloganMarkdown);
     }
-    expect(usageMarkdown).toMatchSnapshot();
+    const expectedSlogan = "This is a test slogan";
+    expect(sloganMarkdown).toBe(expectedSlogan);
   });
-  it("should return a custom rich text document with an embedded image", async () => {
-    const myProj = await client.getEntry(process.env.CONTENTFUL_TEST_PROJ_ID as string);
-    const custom = myProj.fields.custom;
-    const customMarkdown = convertRichTextToMarkdown(custom as any);
+  it("should convert styled text", async () => {
+    const descriptionMarkdown = convertRichTextToMarkdown(projContent.description);
     // Write to readme.md
-    if (typeof customMarkdown === "string" && WRITE_TO_FILE) {
-      fs.writeFileSync("./TEST_IMG_README.md", customMarkdown);
+    if (typeof descriptionMarkdown === "string" && WRITE_TO_FILE) {
+      fs.writeFileSync("./TEST_README.md", descriptionMarkdown);
     }
+    // prettier ignore next 4 lines
+    const expectedDescription = `**This is a paragraph in bold.**
 
-    const imageRegex = new RegExp(
-      /!\[.*\]\(https:\/\/images\.ctfassets\.net\/.*\/.*\/.*\/.*\.png\)/
-    );
+_This is a paragraph in italics._
 
-    expect(imageRegex.test(customMarkdown)).toBe(true);
+**_This is a paragraph in italics and bold._**
+
+\`This is some inline code.\``;
+    expect(descriptionMarkdown).toBe(expectedDescription);
   });
 });
 
@@ -103,3 +103,17 @@ const example = {
     url: "//images.ctfassets.net/l329ngjcm8m3/1ryCjATuECJw1xJGJlXHT3/bd6615876fa65a77a8423ff31aaf9de6/Jest_Example_Default.png",
   },
 };
+
+// it("should return a custom rich text document with an embedded image", async () => {
+//   const customMarkdown = convertRichTextToMarkdown(projContent.custom);
+//   // Write to readme.md
+//   if (typeof customMarkdown === "string" && WRITE_TO_FILE) {
+//     fs.writeFileSync("./TEST_README.md", customMarkdown);
+//   }
+
+//   const imageRegex = new RegExp(
+//     /!\[.*\]\(https:\/\/images\.ctfassets\.net\/.*\/.*\/.*\/.*\.png\)/
+//   );
+
+//   expect(imageRegex.test(customMarkdown)).toBe(true);
+// });

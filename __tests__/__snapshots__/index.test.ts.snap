@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertRichTextToMarkdown should return markdown when passed a:  rich-text obj with code block 1`] = `
+"1\\. Download and cd into the project
+
+\`\`\`bash
+git clone https://github.com/rioredwards/Tic-Tac-Toe.git\\ncd Tic-Tac-Toe
+\`\`\`
+
+2\\. Compile source code into binary (executable) file
+
+\`\`\`bash
+make
+\`\`\`
+
+3\\. Run the executable file
+
+\`\`\`bash
+./main
+\`\`\`"
+`;
+
+exports[`convertRichTextToMarkdown should return markdown when passed a:  rich-text obj with unordered list 1`] = `
+"* Designed using OOP principles
+* Intuitive Command Line Interface"
+`;
+
+exports[`convertRichTextToMarkdown should return markdown when passed a:  rich-text obj with unordered list 2`] = `
+"* Designed using OOP principles
+* Intuitive Command Line Interface"
+`;
