@@ -10,7 +10,6 @@ const formatCodeBlock = (node: any) => {
 };
 
 const formatImage = (title: string, url: string) => {
-  // const markdown = `<CustomEmbeddedImage>![${title}](https:${url})</CustomEmbeddedImage>`;
   const imageObj = { customEmbeddedImage: { title, url } };
   const stringifiedImageObj = JSON.stringify(imageObj);
   const markdown = `<CustomEmbeddedImage>${stringifiedImageObj}</CustomEmbeddedImage>`;

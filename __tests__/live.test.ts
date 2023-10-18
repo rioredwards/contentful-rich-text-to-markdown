@@ -118,6 +118,17 @@ console.log("Hello Test");
 \`\`\``;
     expect(usageMarkdown).toBe(expectedUsage);
   });
+  it("should convert embedded custom images", () => {
+    const customMarkdown = convertRichTextToMarkdown(projContent.custom);
+    markdownContent += `\n\n${customMarkdown}`;
+    const regex =
+      /{"customEmbeddedImage":{"title":"Test Logo","url":"\/\/images\.ctfassets\.net\/[^\/]+\/[^\/]+\/[^\/]+\/Test_Logo\.png"}}/;
+
+    expect(regex.test(customMarkdown)).toBe(true);
+
+    // const expectedCustom = `'{"customEmbeddedImage":{"title":"Test Logo","url":"//images.ctfassets.net/<String>/<String>/<String>/Test_Logo.png"}}'`;
+    // expect(customMarkdown).toBe(expectedCustom);
+  });
 });
 
 // Write to all resulting markdown to the TEST_README.md file
@@ -147,3 +158,20 @@ async function gatherProjContent() {
   projContent.authors = contentfulProj.fields.authors;
   projContent.custom = contentfulProj.fields.custom;
 }
+
+// it("should return a custom rich text document with an embedded image", async () => {
+//   const myProj = await client.getEntry(
+//     process.env.CONTENTFUL_PROJ_ID_ERROR_AFFIRMATIONS as string
+//   );
+//   const custom = myProj.fields.custom;
+//   const customMarkdown = convertRichTextToMarkdown(custom as any);
+//   // Write to readme.md
+//   if (typeof customMarkdown === "string" && WRITE_TO_FILE) {
+//     fs.writeFileSync("./TEST_IMG_README.md", customMarkdown);
+//   }
+
+//   const imageRegex = new RegExp(
+//   /!\[.*\]\(https:\/\/images\.ctfassets\.net\/.*\/.*\/.*\/.*\.png\)/
+// );
+
+// expect(imageRegex.test(customMarkdown)).toBe(true);
