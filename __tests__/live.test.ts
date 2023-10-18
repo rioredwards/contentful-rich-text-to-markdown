@@ -99,6 +99,25 @@ _This is a paragraph in italics._
 2. Item 2`;
     expect(configureMarkdown).toBe(expectedConfigure);
   });
+  it("should convert embedded custom code blocks", () => {
+    const usageMarkdown = convertRichTextToMarkdown(projContent.usage);
+    markdownContent += `\n\n${usageMarkdown}`;
+    // prettier ignore next 2 lines
+    const expectedUsage = `Step 1:
+
+\`\`\`bash
+cd test
+ls test
+pwd test
+\`\`\`
+
+Step 2:
+
+\`\`\`javascript
+console.log("Hello Test");
+\`\`\``;
+    expect(usageMarkdown).toBe(expectedUsage);
+  });
 });
 
 // Write to all resulting markdown to the TEST_README.md file

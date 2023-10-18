@@ -13,3 +13,17 @@ _This is a paragraph in italics._
 
 1. Item 1
 2. Item 2
+
+Step 1:
+
+```bash
+cd test
+ls test
+pwd test
+```
+
+Step 2:
+
+```javascript
+console.log("Hello Test");
+```
