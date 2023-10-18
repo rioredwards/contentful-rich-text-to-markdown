@@ -15,7 +15,11 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "args": ["-t", "rich-text obj with code block", "--runInBand"],
+      "args": [
+        "-t",
+        "should return a custom rich text document with an embedded image",
+        "--runInBand"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
