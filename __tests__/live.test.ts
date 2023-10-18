@@ -121,13 +121,17 @@ console.log("Hello Test");
   it("should convert embedded custom images", () => {
     const customMarkdown = convertRichTextToMarkdown(projContent.custom);
     markdownContent += `\n\n${customMarkdown}`;
+
+    const json = JSON.parse(customMarkdown).customEmbeddedImage;
+    const imgTitle = json.title;
+    const imgUrl = json.url;
+
     const regex =
       /{"customEmbeddedImage":{"title":"Test Logo","url":"\/\/images\.ctfassets\.net\/[^\/]+\/[^\/]+\/[^\/]+\/Test_Logo\.png"}}/;
 
     expect(regex.test(customMarkdown)).toBe(true);
-
-    // const expectedCustom = `'{"customEmbeddedImage":{"title":"Test Logo","url":"//images.ctfassets.net/<String>/<String>/<String>/Test_Logo.png"}}'`;
-    // expect(customMarkdown).toBe(expectedCustom);
+    expect(imgTitle).toBe("Test Logo");
+    expect(imgUrl).toBeDefined();
   });
 });
 
