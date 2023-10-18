@@ -72,7 +72,7 @@ describe("convertRichTextToMarkdown", () => {
   });
   it("should convert styled text", () => {
     const descriptionMarkdown = convertRichTextToMarkdown(projContent.description);
-    markdownContent += descriptionMarkdown;
+    markdownContent += `\n\n${descriptionMarkdown}`;
     // prettier ignore next 4 lines
     const expectedDescription = `**This is a paragraph in bold.**
 
@@ -85,7 +85,7 @@ _This is a paragraph in italics._
   });
   it("should convert unordered lists", () => {
     const featuresMarkdown = convertRichTextToMarkdown(projContent.features);
-    markdownContent += featuresMarkdown;
+    markdownContent += `\n\n${featuresMarkdown}`;
     // prettier ignore next 2 lines
     const expectedFeatures = `* Item 1
 * Item 2`;
@@ -93,7 +93,7 @@ _This is a paragraph in italics._
   });
   it("should convert ordered lists", () => {
     const configureMarkdown = convertRichTextToMarkdown(projContent.configure);
-    markdownContent += configureMarkdown;
+    markdownContent += `\n\n${configureMarkdown}`;
     // prettier ignore next 2 lines
     const expectedConfigure = `1. Item 1
 2. Item 2`;
