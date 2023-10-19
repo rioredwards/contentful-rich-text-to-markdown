@@ -37,7 +37,8 @@ const htmRendererOptions: Options = {
         try {
           const title = entry.fields.title;
           const url = entry.fields.file.url;
-          const markdown = formatImage(title, url);
+          const fullUrl = `https:${url}`;
+          const markdown = formatImage(title, fullUrl);
           return markdown;
         } catch (err) {
           console.error("Error rendering embedded-asset-block", err);

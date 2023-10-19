@@ -127,7 +127,7 @@ console.log("Hello Test");
     const imgUrl = json.url;
 
     const regex =
-      /{"customEmbeddedImage":{"title":"Test Logo","url":"\/\/images\.ctfassets\.net\/[^\/]+\/[^\/]+\/[^\/]+\/Test_Logo\.png"}}/;
+      /{"customEmbeddedImage":{"title":"Test Logo","url":"https:\/\/images\.ctfassets\.net\/[^\/]+\/[^\/]+\/[^\/]+\/Test_Logo\.png"}}/;
 
     expect(regex.test(customMarkdown)).toBe(true);
     expect(imgTitle).toBe("Test Logo");
@@ -142,13 +142,6 @@ function writeProjContentToFile() {
   }
 }
 
-const example = {
-  customEmbeddedImage: {
-    title: "Error Affirmations Jest Reporter Screenshot 1",
-    url: "//images.ctfassets.net/l329ngjcm8m3/1ryCjATuECJw1xJGJlXHT3/bd6615876fa65a77a8423ff31aaf9de6/Jest_Example_Default.png",
-  },
-};
-
 async function gatherProjContent() {
   if (contentfulProj !== undefined) return;
   contentfulProj = await client.getEntry(process.env.CONTENTFUL_TEST_PROJ_ID as string);
@@ -162,44 +155,3 @@ async function gatherProjContent() {
   projContent.authors = contentfulProj.fields.authors;
   projContent.custom = contentfulProj.fields.custom;
 }
-
-const exampleCustomFromPython = {
-  data: {},
-  content: [
-    {
-      data: {
-        target: {
-          metadata: { tags: [] },
-          sys: {
-            space: { sys: { type: "Link", linkType: "Space", id: "l329ngjcm8m3" } },
-            id: "61Gv4YS4gh15J9LlabYYGw",
-            type: "Asset",
-            createdAt: "2023-10-18T18:32:09.123Z",
-            updatedAt: "2023-10-18T18:32:09.123Z",
-            environment: { sys: { id: "master", type: "Link", linkType: "Environment" } },
-            revision: 1,
-            locale: "en-US",
-          },
-          fields: {
-            title: "Test Logo",
-            description: "",
-            file: {
-              url: "//images.ctfassets.net/l329ngjcm8m3/61Gv4YS4gh15J9LlabYYGw/c1bb5e48c4fb498e1a83cbcf5ea92085/Test_Logo.png",
-              details: { size: 26909, image: { width: 1024, height: 1024 } },
-              fileName: "Test Logo.png",
-              contentType: "image/png",
-            },
-          },
-        },
-      },
-      content: [],
-      nodeType: "embedded-asset-block",
-    },
-    {
-      data: {},
-      content: [{ data: {}, marks: [], value: "", nodeType: "text" }],
-      nodeType: "paragraph",
-    },
-  ],
-  nodeType: "document",
-};

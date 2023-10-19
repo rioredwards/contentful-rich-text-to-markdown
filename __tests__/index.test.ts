@@ -33,6 +33,9 @@ describe("convertRichTextToMarkdown should return markdown when passed a: ", () 
   it("rich-text obj with code embedded asset", () => {
     const markdown = convertRichTextToMarkdown(exampleCustomFromPython);
 
-    expect(markdown).toMatchSnapshot();
+    const regex =
+      /{"customEmbeddedImage":{"title":"Test Logo","url":"https:\/\/images\.ctfassets\.net\/[^\/]+\/[^\/]+\/[^\/]+\/Test_Logo\.png"}}/;
+
+    expect(regex.test(markdown)).toBe(true);
   });
 });
